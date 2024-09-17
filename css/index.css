@@ -1,0 +1,13 @@
+#breakdownTable a { text-decoration:none; }
+#breakdownTable a:hover { text-decoration:underline; }
+
+#breakdownTable td, #breakdownTable th {
+  border:solid 1px var(--clrBorder);
+  text-align:center;
+}
+
+#breakdownTable th {
+  background-color:rgba(0,0,0, 0.4);
+  padding:4px 10px;
+}
+

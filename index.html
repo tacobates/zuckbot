@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Zucker-Bot</title>
+  <meta name="description" content="Get business advice from the Zuck... or a Robot Approximation of him.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/html5-boilerplate_v8.0.0/normalize.css">
+  <link rel="stylesheet" href="css/html5-boilerplate_v8.0.0/main.css">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/index.css">
+  <link href='https://fonts.googleapis.com/css?family=Press Start 2P' rel='stylesheet'>
+  <link rel="stylesheet" href="asset/speech_bubble.css"> <!-- Speech Bubbles by Jos Faber: https://codepen.io/josfabre/pen/EBMWwW -->
+  <style type="text/css">
+    #bLink { margin-left:30px; }
+	#controls { margin:10px 0px 0px 0px; }
+	#copied, #footer { color:var(--clrBorder); text-shadow:1px 1px 2px #000; }
+	#rowWrap { vertical-align:text-top; }
+	#rowWrap img { display:inline; vertical-align:top; }
+	#yt_link {
+	  float:right;
+	  display:inline-block;
+	}
+	#zuck {
+	  display:inline-block;
+	  margin:12px 0px 20px 20px;
+	  animation: rotation 8s infinite ease-in-out;
+	}
+
+	.centered { text-align:center; }
+    .hide { visibility:hidden; }
+    .invisible, .landscape #msg1, .profile #msg2 { display:none; }
+
+	/**** CSS ANIMATIONS *****/
+    @keyframes rotation {
+      25% { transform: rotate(2deg); }
+      75% { transform: rotate(-2deg); }
+      100% { transform: rotate(0deg); }
+    }
+  </style>
+  <script src="asset/zuckbot.js"></script>
+</head>
+
+<body onload="initZuckbot()">
+  <div id="content" class="landscape profile">
+    <div id="controls" class="centered"><!-- TODO: prettier controls -->
+	  <button id="bPrev" onclick="doControl(-1)" title="Revind to the Previous quote">&larr;</button>
+	  <button id="bPause" onclick="doControl(0)" title="Pause to keep this Quote up">&#x23F8;</button>
+	  <button id="bPlay" onclick="doControl(0)" title="Auto-Cycle through Quotes intermittently">&#x23F5;</button>
+	  <button id="bNext" onclick="doControl(1)" title="Next Quote">&rarr;</button>
+	  <button id="bLink" onclick="copyQuoteURL();" title="Copy a Link to this Quote">&#x1F517;</button>
+	  <span id="copied" class="hide">Copied Quote Link to Clipboard</span>
+	</div>
+
+    <div id="zuckWrap" class="section centered">
+	  <div id="msg1" class="bubble shadow grow medium bottom"></div>
+	  <div id="rowWrap">
+        <img id="zuck" src="asset/zuck.gif" />
+	    <div id="msg2" class="bubble shadow large left"></div>
+      </div>
+    </div>
+
+    <div id="footer" class="centered">
+	  <span id="yt_link">
+	    <a href="https://www.youtube.com/@CynicPlacebo" target="_blank" title="Cynic Placebo on YouTube">
+		  <img src="asset/cynic.png" /><br/>
+		  Check out my<br/>YouTube Channel
+		</a>
+      </span>
+      This page is for entertainment purposes only.<br/>
+      Any likeness to real-world people is <i><b>entirely INTENDED</b></i>.
+	  <br/><br/><br/><br/>
+    </div>
+  </div>
+</body>
+</html>
